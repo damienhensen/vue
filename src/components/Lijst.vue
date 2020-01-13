@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-bind:key="lijst.id" v-for="lijst in lijsten">
-            <Item v-bind:lijst="lijst" />
+            <Item v-bind:lijst="lijst" v-on:del-lijst="$emit('del-lijst', lijst.id)" />
         </div>
     </div>
 </template>
