@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <Lijsten v-bind:lijsten="lijsten" />
+  <Header />
+    <Lijsten v-bind:lijsten="lijsten" v-on:del-lijst="deleteLijst" />
   </div>
 </template>
 
 <script>
+import Header from './components/layout/Header';
 import Lijsten from './components/Lijst';
 
 export default {
   name: 'app',
   components: {
+    Header,
     Lijsten
   },
   data() {
@@ -23,7 +26,7 @@ export default {
         {
           id: 2,
           name: "item 2",
-          completed: true
+          completed: false
         },
         {
           id: 3,
@@ -33,7 +36,12 @@ export default {
 
       ]
     }
-  }
+  },
+    methods: {
+      deleteLijst(id) {
+          this.lijsten = this.lijsten.filter(lijst => lijst.id !== id);
+      }
+    }
 }
 </script>
 
