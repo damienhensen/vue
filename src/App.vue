@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Lijsten v-bind:lijsten="lijsten" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Lijsten from './components/Lijst';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Lijsten
+  },
+  data() {
+    return {
+      lijsten: [
+        {
+          id: 1,
+          name: "item 1",
+          completed: false
+        },
+        {
+          id: 2,
+          name: "item 2",
+          completed: true
+        },
+        {
+          id: 3,
+          name: "item 3",
+          completed: false
+        }
+
+      ]
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
 }
+
+  /*#app {*/
+/*  font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*  text-align: center;*/
+/*  color: #2c3e50;*/
+/*  margin-top: 60px;*/
+/*}*/
 </style>
