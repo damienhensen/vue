@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <h1>Lijsten :)</h1>
+        <h1>Playlist :)</h1>
     </header>
 </template>
 
