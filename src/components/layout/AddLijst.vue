@@ -41,6 +41,10 @@
                 this.$emit('addLijst', newLijst);
 
                 this.title = '';
+                this.author = '';
+                this.duration = '';
+                this.uploadDate = '';
+                this.link = '';
             }
         }
     }
